@@ -7,5 +7,5 @@
 <?php $title = 'Статистика звонков';?>
 <?php ob_start();?>
     <h1>Статистика звонков</h1>
+    <div class=""></div>
 <?php $content = ob_get_clean();?>
-<?php include 'layout.php';?>
