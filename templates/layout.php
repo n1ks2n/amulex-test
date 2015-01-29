@@ -14,9 +14,12 @@
         <meta charset="utf-8">
         <title><?php echo $title ?></title>
         <link rel="stylesheet" type="text/css" href="/css/styles.css"/>
+        <link rel="stylesheet" type="text/css" href="/css/c3.css"/>
         <script type="text/javascript" src="/js/jquery-1.11.1.js"></script>
         <script type="text/javascript" src="/js/jquery-ui-1.10.4.min.js"></script>
         <script type="text/javascript" src="/js/jquery-ui-i18n.js"></script>
+        <script src="/js/d3.min.js"></script>
+        <script src="/js/c3.min.js"></script>
     </head>
     <body>
     <script type="text/javascript">
