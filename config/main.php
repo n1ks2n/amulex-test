@@ -10,10 +10,10 @@ return [
     ],
     //base
     'base_models' => [
-        '/models/base/*'
+        '/core/DataBaseModel.php'
     ],
     'base_controllers' => [
-        '/controllers/base/*'
+        '/core/Controller.php'
     ],
     'models' => [
         '/models/*',

@@ -11,4 +11,11 @@ class IndexController extends Controller
     {
         $this->render('index');
     }
+
+    public function actionAjax()
+    {
+        $model = new Systemcall();
+        echo $model->getStatData();
+        exit;
+    }
 } 

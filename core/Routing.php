@@ -16,7 +16,7 @@ class Routing
 
     public function __construct()
     {
-        $this->routes = require_once(__DIR__.self::ROUTING_FILE_PATH);
+        $this->routes = require(__DIR__.self::ROUTING_FILE_PATH);
     }
 
     public function findRoute()
@@ -46,6 +46,22 @@ class Routing
                     $controller->$action();
                 }
             }
+        }
+    }
+
+    public function createUrl($path)
+    {
+        foreach($this->routes as $route) {
+            if($route[0] == $path) {
+                $matches[] = $route['pattern'];
+            }
+        }
+        if (empty($matches)) {
+            throw new Exception('No route pattern matches requested URL!');
+        } elseif (count($matches) > 1) {
+            throw new Exception('Requested URL matches several route patterns! Please check your /config/routes.php');
+        } else {
+            return 'http://'.$_SERVER['HTTP_HOST'].$matches[0];
         }
     }
 } 

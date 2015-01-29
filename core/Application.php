@@ -18,7 +18,8 @@ class Application
         try {
             $this->includeCoreFiles();
             $this->initRouting();
-        } catch(Exception $e) {
+        }
+        catch (Exception $e) {
             $e->__toString();
         }
     }
@@ -36,7 +37,7 @@ class Application
                         if (!is_dir(__DIR__.'/../'.$match[0])) {
                             throw new Exception('Check directory '.$match.' existence.');
                         } else {
-                            foreach( glob(__DIR__.'/../'.$match[0].'*.php') as $file) {
+                            foreach (glob(__DIR__.'/../'.$match[0].'*.php') as $file) {
                                 include $file;
                             }
                         }
@@ -55,9 +56,10 @@ class Application
 
     public function run()
     {
-        try{
+        try {
             $this->routing->findRoute();
-        } catch(Exception $e) {
+        }
+        catch (Exception $e) {
             echo $e->__toString();
         }
     }
